@@ -10,7 +10,7 @@ router.patch("/", async (req, res) => {
 });
 
 function getWeather(city) {
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1107429ef67f4ff90050a129c01b5219`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`;
   return new Promise((res, rej) => {
     fetch(url)
       .then((response) => response.json())
